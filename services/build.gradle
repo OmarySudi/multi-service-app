@@ -1,0 +1,10 @@
+// Parent module for all services
+// No source code here, just organizational
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = false
+}

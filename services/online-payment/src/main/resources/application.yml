@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: online-payment-service
+
+server:
+  port: 8085
+
+jwt:
+  secret: mySecretKeyForJWTTokenGenerationAndValidation12345678901234567890
+  security:
+    enabled: true  # Enable JWT security
+
+logging:
+  level:
+    com.multiservice: DEBUG

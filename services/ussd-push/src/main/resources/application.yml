@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ussd-push-service
+
+server:
+  port: 8084
+
+jwt:
+  secret: mySecretKeyForJWTTokenGenerationAndValidation12345678901234567890
+  security:
+    enabled: true  # Enable JWT security
+
+logging:
+  level:
+    com.multiservice: DEBUG

@@ -1,0 +1,11 @@
+rootProject.name = 'multi-service-app'
+include 'common'
+include 'repository'
+include 'services:logging-common'
+include 'services:authentication-service'
+include 'services:dashboard-service'
+include 'services:tips-service'
+include 'services:ussd-push'
+include 'services:online-payment'
+include 'services:gateway-service'
+

@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: dashboard-service
+
+server:
+  port: 8082
+
+jwt:
+  secret: mySecretKeyForJWTTokenGenerationAndValidation12345678901234567890
+  security:
+    enabled: true  # Explicitly enable JWT security from common module
+
+logging:
+  level:
+    com.multiservice: DEBUG

@@ -1,0 +1,40 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: gateway-service
+
+  cloud:
+   gateway:
+     mvc:
+       routes:
+         - id: auth
+           uri: http://localhost:8081
+           predicates:
+             - Path=/api/auth/**
+
+         - id: dashboard
+           uri: http://localhost:8082
+           predicates:
+             - Path=/api/dashboard/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+jwt:
+  secret: mySecretKeyForJWTTokenGenerationAndValidation12345678901234567890
+  security:
+    enabled: true  # Explicitly enable JWT security from common module
+
+logging:
+  level:
+    com.multiservice: DEBUG
+  pattern:
+    level: "%5p [CID:%X{X-Correlation-ID}]"
+
+
+
