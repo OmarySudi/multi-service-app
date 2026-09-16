@@ -30,6 +30,11 @@ jwt:
   security:
     enabled: true  # Explicitly enable JWT security from common module
 
+
+correlation:
+  id:
+    enabled: true
+
 logging:
   level:
     com.multiservice: DEBUG

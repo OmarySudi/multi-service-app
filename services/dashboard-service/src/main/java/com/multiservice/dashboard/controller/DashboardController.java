@@ -46,7 +46,6 @@ public class DashboardController {
     @GetMapping("/public/health")
     public ResponseEntity<String> health(HttpServletRequest request) {
         String correlationId = request.getHeader("X-Correlation-ID");
-        log.debug("Dashboard Service is running: CorrelationId is {}",correlationId);
         if(correlationId != null)
             return ResponseEntity.ok("Dashboard Service is running! CorrelationId=" + correlationId);
         else

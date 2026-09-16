@@ -25,6 +25,10 @@ jwt:
   secret: mySecretKeyForJWTTokenGenerationAndValidation12345678901234567890
   expiration: 86400000 # 24 hours in milliseconds
 
+correlation:
+  id:
+    enabled: true
+
 logging:
   level:
     com.multiservice: DEBUG

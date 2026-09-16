@@ -1,11 +1,10 @@
-package com.multiservice.gateway_service.filter;
+package com.multiservice.common.util;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletRequestWrapper;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -14,7 +13,6 @@ import java.util.List;
 import java.util.UUID;
 
 @Slf4j
-@Component
 public class CorrelationIdFilter implements Filter {
 
     @Override

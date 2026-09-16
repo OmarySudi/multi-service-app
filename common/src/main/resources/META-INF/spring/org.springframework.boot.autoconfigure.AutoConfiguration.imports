@@ -1,1 +1,2 @@
 com.multiservice.common.config.JwtSecurityAutoConfiguration
+com.multiservice.common.config.CorrelationAutoConfiguration
