@@ -77,6 +77,18 @@
         </encoder>
     </appender>
 
+    <!-- =========================================================
+     LOGSTASH TCP APPENDER
+   ========================================================== -->
+    <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>localhost:5010</destination>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <includeMdc>true</includeMdc>
+            <includeContext>true</includeContext>
+            <includeCallerData>false</includeCallerData>
+        </encoder>
+    </appender>
+
 
     <!-- =========================================================
          ERROR FILE ONLY
@@ -136,6 +148,12 @@
         <queueSize>2000</queueSize>
     </appender>
 
+    <appender name="ASYNC_LOGSTASH" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="LOGSTASH"/>
+        <queueSize>5000</queueSize>
+        <discardingThreshold>0</discardingThreshold>
+    </appender>
+
 
     <!-- =========================================================
          ROOT LOGGER
@@ -144,6 +162,7 @@
         <appender-ref ref="ASYNC_CONSOLE" />
         <appender-ref ref="ASYNC_FILE" />
         <appender-ref ref="ASYNC_ERROR" />
+        <appender-ref ref="ASYNC_LOGSTASH" />
     </root>
 
 </configuration>
